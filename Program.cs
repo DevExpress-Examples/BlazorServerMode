@@ -14,13 +14,13 @@ builder.Services.AddDevExpressBlazor(options => {
     options.SizeMode = DevExpress.Blazor.SizeMode.Medium;
 });
 
-builder.Services.AddDbContext<IssuesContext>((sp, options) =>
-{
-    var env = sp.GetRequiredService<IWebHostEnvironment>();
-    var dbPath = Path.Combine(env.ContentRootPath, "Issues.mdf");
-    options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=" + dbPath);
-}, contextLifetime: ServiceLifetime.Transient);
-//builder.Services.AddDbContext<IssuesContext>((sp, options) => options.UseInMemoryDatabase("Issues"), contextLifetime: ServiceLifetime.Transient);
+\\builder.Services.AddDbContext<IssuesContext>((sp, options) =>
+\\{
+\\    var env = sp.GetRequiredService<IWebHostEnvironment>();
+\\    var dbPath = Path.Combine(env.ContentRootPath, "Issues.mdf");
+\\    options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=" + dbPath);
+\\}, contextLifetime: ServiceLifetime.Transient);
+builder.Services.AddDbContext<IssuesContext>((sp, options) => options.UseInMemoryDatabase("Issues"), contextLifetime: ServiceLifetime.Transient);
 builder.Services.AddTransient<IssuesContextInitializer>();
 
 
