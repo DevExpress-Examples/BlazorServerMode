@@ -1,0 +1,17 @@
+﻿@page "/localdata"
+@using InstantFeedback.Models;
+@using Microsoft.EntityFrameworkCore;
+@inject IssuesContext Context
+
+<Grid Issues="issues" Users="users" />
+
+@code {
+    IEnumerable<Issue> issues { get; set; }
+    IEnumerable<User> users;
+
+    protected override void OnInitialized()
+    {
+        issues = Context.Issues.ToList();
+        users = Context.Users.ToList();
+    }
+}

@@ -1,0 +1,28 @@
+﻿@page "/servermode"
+@using DevExpress.Data.Linq;
+@using InstantFeedback.Models;
+@using Microsoft.EntityFrameworkCore;
+@inject IssuesContext Context
+@implements IDisposable
+
+<Grid Issues="instantFeedbackSource" Users="users" />
+
+@code {
+    EntityInstantFeedbackSource instantFeedbackSource { get; set; }
+    IEnumerable<User> users;
+
+    protected override void OnInitialized()
+    {
+        instantFeedbackSource = new EntityInstantFeedbackSource(e =>
+        {
+            e.KeyExpression = "Id";
+            e.QueryableSource = Context.Issues;
+        });
+        users = Context.Users.ToList();
+    }
+
+    public void Dispose()
+    {
+        instantFeedbackSource?.Dispose();
+    }
+}

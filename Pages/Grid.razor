@@ -1,0 +1,34 @@
+﻿@page "/grid"
+
+@using InstantFeedback.Models;
+
+<DxGrid Data="Issues" ShowSearchBox=true
+        PageSize="50"
+        FilterMenuButtonDisplayMode="GridFilterMenuButtonDisplayMode.Always"
+        ShowGroupPanel=true
+        CssClass="h-100"
+        TextWrapEnabled=true
+        KeyFieldName="Id">
+    <Columns>
+        <DxGridDataColumn FieldName="Id" Width="100" />
+        <DxGridDataColumn FieldName="Subject" />
+        <DxGridDataColumn FieldName="UserId" Caption="User" Width="250">
+            <EditSettings>
+                <DxComboBoxSettings Data="Users" ValueFieldName="Id" TextFieldName="FullName" />
+            </EditSettings>
+        </DxGridDataColumn>
+        <DxGridDataColumn FieldName="Created" Width="100" />
+        <DxGridDataColumn FieldName="Votes" Width="150" />
+        <DxGridDataColumn FieldName="Priority" Width="150" />
+    </Columns>
+    <GroupSummary>
+        <DxGridSummaryItem FieldName="Id" SummaryType="GridSummaryItemType.Count" />
+    </GroupSummary>
+</DxGrid>
+@code {
+    [Parameter]
+    public object Issues { get; set; }
+
+    [Parameter]
+    public IEnumerable<User> Users { get; set; }
+}
