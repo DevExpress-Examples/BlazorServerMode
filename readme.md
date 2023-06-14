@@ -4,7 +4,7 @@ This example demonstrates the difference between the local and server-side data 
 ## Use a Real Database
 For simplicity, this example generates an in-memory database that operates without SQL queries. If you want to test the sample with a real database, follow the link below to download the database file:
 
-[Download - Issues.zip](https://www.dropbox.com/s/fu8j0l1r3fkj1vd/Issues.zip?dl=0)
+[Download - Issues.zip](https://downloads.devexpress.com/blazor/issues.zip)
 
 Unpack the archive into the project folder and change database connection settings in [Program.cs](./CS/Program.cs):
 ```cs
