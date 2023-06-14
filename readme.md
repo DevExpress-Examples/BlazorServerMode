@@ -16,8 +16,11 @@ builder.Services.AddDbContext<IssuesContext>((sp, options) => {
 
 ## Files to Review
 
-- [Index.razor](./CS/Pages/Index.razor)
+- [Grid.razor](./CS/Pages/Grid.razor)
+- [LocalData.razor](./CS/Pages/LocalData.razor)
+- [ServerMode.razor](./CS/Pages/ServerMode.razor)
 - [Program.cs](./CS/Program.cs)
+- [IssuesContextInitializer.cs](./CS/Model/IssuesContextInitializer.cs)
 
 ## Documentation
 
