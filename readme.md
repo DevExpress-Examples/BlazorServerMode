@@ -9,7 +9,7 @@ This example demonstrates the difference between local and server-side data load
 ## Use a Real Database
 For simplicity, this example generates an in-memory database that does not use SQL queries. If you want to test the sample with a real database, use the link below to download a sample large database file:
 
-[Download - Issues.zip](https://downloads.devexpress.com/blazor/issues.zip)
+[Download - Issues.zip](https://go.devexpress.com/blazor_servermode_database.aspx)
 
 Unpack the archive into the project folder and change database connection settings in [Program.cs](./CS/Program.cs):
 ```cs
@@ -35,4 +35,4 @@ builder.Services.AddDbContext<IssuesContext>((sp, options) => {
 - [Large Data (Server Mode Sources)](https://docs.devexpress.com/Blazor/403737/components/grid/bind-to-data#large-data-server-mode-sources)
     
 ## Free Trial
-Download a 30-day trial of DevExpress Blazor components here: [Free DevExpress Trial](https://www.devexpress.com/products/try/).
+Download a 30-day trial of DevExpress Blazor components here: [Free DevExpress Trial](https://go.devexpress.com/blazor_servermode_trial.aspx).
