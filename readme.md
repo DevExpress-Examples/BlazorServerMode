@@ -22,7 +22,7 @@ builder.Services.AddDbContext<IssuesContext>((sp, options) => {
 - [LocalData.razor](./CS/Pages/LocalData.razor)
 - [ServerMode.razor](./CS/Pages/ServerMode.razor)
 - [Program.cs](./CS/Program.cs)
-- [IssuesContextInitializer.cs](./CS/Model/IssuesContextInitializer.cs)
+- [IssuesContextInitializer.cs](./CS/Models/IssuesContextInitializer.cs)
 
 ## Documentation
 
@@ -30,4 +30,4 @@ builder.Services.AddDbContext<IssuesContext>((sp, options) => {
 - [Large Data (Server Mode Sources)](https://docs.devexpress.com/Blazor/403737/components/grid/bind-to-data#large-data-server-mode-sources)
     
 ## Free Trial
-Download a 30-day trial of DevExpress Blazor components here: [Free DevExpress Trial](devexpress.com/try).
+Download a 30-day trial of DevExpress Blazor components here: [Free DevExpress Trial](https://www.devexpress.com/products/try/).
