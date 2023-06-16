@@ -1,8 +1,8 @@
 # Grid for Blazor - Server Mode Data Processing
-This example demonstrates the difference between the local and server-side data loading approaches in a Blazor Server app connected to a larve database via [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/).
+This example demonstrates the difference between local and server-side data loading strategies for a Blazor Server app connected to a large database via [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/).
 
 ## Use a Real Database
-For simplicity, this example generates an in-memory database that operates without SQL queries. If you want to test the sample with a real database, follow the link below to download the database file:
+For simplicity, this example generates an in-memory database that does not use SQL queries. If you want to test the sample with a real database, use the link below to download a sample large database file:
 
 [Download - Issues.zip](https://downloads.devexpress.com/blazor/issues.zip)
 
@@ -26,7 +26,7 @@ builder.Services.AddDbContext<IssuesContext>((sp, options) => {
 
 ## Documentation
 
-- [Get Started with Grid](https://docs.devexpress.com/Blazor/403625/grid/get-started-with-grid)
+- [Getting Started with the DevExpress Blazor Grid](https://docs.devexpress.com/Blazor/403625/grid/get-started-with-grid)
 - [Large Data (Server Mode Sources)](https://docs.devexpress.com/Blazor/403737/components/grid/bind-to-data#large-data-server-mode-sources)
     
 ## Free Trial
