@@ -35,8 +35,6 @@ builder.Services.AddDbContext<IssuesContext>((sp, options) => {
 - [Getting Started with the DevExpress Blazor Grid](https://docs.devexpress.com/Blazor/403625/grid/get-started-with-grid)
 - [Large Data (Server Mode Sources)](https://docs.devexpress.com/Blazor/403737/components/grid/bind-to-data#large-data-server-mode-sources)
     
-## Free Trial
-Download a 30-day trial of DevExpress Blazor components here: [Free DevExpress Trial](https://go.devexpress.com/blazor_servermode_trial.aspx).
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
