@@ -38,7 +38,7 @@ builder.Services.AddDbContext<IssuesContext>((sp, options) => {
 ## Free Trial
 Download a 30-day trial of DevExpress Blazor components here: [Free DevExpress Trial](https://go.devexpress.com/blazor_servermode_trial.aspx).
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=BlazorServerMode&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=BlazorServerMode&~~~was_helpful=no)
 
