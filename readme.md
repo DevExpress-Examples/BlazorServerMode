@@ -33,7 +33,7 @@ builder.Services.AddDbContext<IssuesContext>((sp, options) => {
 ## Documentation
 
 - [Getting Started with the DevExpress Blazor Grid](https://docs.devexpress.com/Blazor/403625/grid/get-started-with-grid)
-- [Large Data (Server Mode Sources)](https://docs.devexpress.com/Blazor/403737/components/grid/bind-to-data#large-data-server-mode-sources)
+- [Large Data (Server Mode Sources)](https://docs.devexpress.com/Blazor/405842/components/grid/bind-to-data/server-mode)
     
 <!-- feedback -->
 ## Does This Example Address Your Development Requirements/Objectives?
