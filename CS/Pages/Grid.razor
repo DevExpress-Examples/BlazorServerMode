@@ -3,23 +3,32 @@
 @using InstantFeedback.Models;
 
 <DxGrid Data="Issues" ShowSearchBox=true
-        PageSize="50"
         FilterMenuButtonDisplayMode="GridFilterMenuButtonDisplayMode.Always"
         ShowGroupPanel=true
+        EditMode="GridEditMode.EditRow"
+        ShowFilterRow="true"
+        VirtualScrollingEnabled="true"
         CssClass="h-100"
         TextWrapEnabled=true
         KeyFieldName="Id">
     <Columns>
-        <DxGridDataColumn FieldName="Id" Width="100" />
-        <DxGridDataColumn FieldName="Subject" />
-        <DxGridDataColumn FieldName="UserId" Caption="User" Width="250">
-            <EditSettings>
-                <DxComboBoxSettings Data="Users" ValueFieldName="Id" TextFieldName="FullName" />
-            </EditSettings>
+        <DxGridCommandColumn Width="90"/>
+        <DxGridDataColumn FieldName="Id" Width="100" DataRowEditorVisible="false"/>
+        <DxGridDataColumn FieldName="Subject"/>
+        <DxGridDataColumn FieldName="User.FullName" Caption="User" Width="250">
+            <CellEditTemplate>
+                @{
+                    var issue = (ServerMode.IssueWithUser)context.EditModel;
+                }
+                <DxComboBox TValue="ServerMode.UserInfo" TData="ServerMode.UserInfo" Data="Users" Value="issue.User" KeyFieldName="@nameof(ServerMode.UserInfo.Id)"
+                            ValidationEnabled="false"
+                            SelectedDataItemChanged="s => issue.User = s.DataItem" TextFieldName="@nameof(ServerMode.UserInfo.FullName)"
+                            ListRenderMode="ListRenderMode.Virtual"/>
+            </CellEditTemplate>
         </DxGridDataColumn>
-        <DxGridDataColumn FieldName="Created" Width="100" />
-        <DxGridDataColumn FieldName="Votes" Width="150" />
-        <DxGridDataColumn FieldName="Priority" Width="150" />
+        <DxGridDataColumn FieldName="Created" Width="100"/>
+        <DxGridDataColumn FieldName="Votes" Width="150"/>
+        <DxGridDataColumn FieldName="Priority" Width="150"/>
     </Columns>
     <GroupSummary>
         <DxGridSummaryItem FieldName="Id" SummaryType="GridSummaryItemType.Count" />
@@ -30,5 +39,5 @@
     public object Issues { get; set; }
 
     [Parameter]
-    public IEnumerable<User> Users { get; set; }
+    public IEnumerable<ServerMode.UserInfo> Users { get; set; }
 }

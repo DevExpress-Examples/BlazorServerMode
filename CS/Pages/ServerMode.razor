@@ -8,21 +8,43 @@
 <Grid Issues="instantFeedbackSource" Users="users" />
 
 @code {
-    EntityInstantFeedbackSource instantFeedbackSource { get; set; }
-    IEnumerable<User> users;
+    GridDevExtremeDataSource<IssueWithUser> instantFeedbackSource { get; set; }
+    IEnumerable<UserInfo> users;
 
-    protected override void OnInitialized()
-    {
-        instantFeedbackSource = new EntityInstantFeedbackSource(e =>
-        {
-            e.KeyExpression = "Id";
-            e.QueryableSource = Context.Issues;
+    protected override void OnInitialized() {
+        var userQuery = Context.Issues.Include("User").Select(i => new IssueWithUser {
+            Id = i.Id,
+            Subject = i.Subject,
+            User = new UserInfo {
+                Id = i.UserId,
+                FullName = i.User.FirstName + " " + i.User.LastName,
+            },
+            Created = i.Created,
+            Votes = i.Votes,
+            Priority = i.Priority,
         });
-        users = Context.Users.ToList();
+        instantFeedbackSource = new GridDevExtremeDataSource<IssueWithUser>(userQuery);
+        users = Context.Users.Select(u => new UserInfo {
+            Id = u.Id,
+            FullName = u.FullName
+        });
     }
 
     public void Dispose()
     {
-        instantFeedbackSource?.Dispose();
     }
+    public class IssueWithUser {
+        public int Id { get; set; }
+        public string Subject { get; set; }
+        public UserInfo User { get; set; }
+        public DateTime Created { get; set; }
+        public int Votes { get; set; }
+        public Priority Priority { get; set; }
+    }
+    public class UserInfo {
+        public int Id { get; set; }
+        public string FullName { get; set; }
+    }
+
 }
+
